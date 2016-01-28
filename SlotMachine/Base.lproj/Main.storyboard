@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,8 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-dM-QOv">
-                                <rect key="frame" x="278" y="224" width="45" height="36"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKg-3K-Xhi">
+                                <rect key="frame" x="4" y="20" width="588" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="yK5-Ap-a5o"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFi-IK-Lqc">
+                                <rect key="frame" x="279" y="488" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-dM-QOv">
+                                <rect key="frame" x="276" y="344" width="45" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SPIN">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,28 +40,17 @@
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZiG-zC-rYG"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKg-3K-Xhi">
-                                <rect key="frame" x="0.0" y="20" width="600" height="162"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFi-IK-Lqc">
-                                <rect key="frame" x="279" y="488" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="UlD-Xp-pX5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YKg-3K-Xhi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Lon-ne-Dgm"/>
-                            <constraint firstItem="YKg-3K-Xhi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oye-YQ-gZU"/>
-                            <constraint firstAttribute="trailing" secondItem="YKg-3K-Xhi" secondAttribute="trailing" id="P90-2J-nbT"/>
-                            <constraint firstItem="rRf-dM-QOv" firstAttribute="centerX" secondItem="YKg-3K-Xhi" secondAttribute="centerX" id="SvP-MH-fha"/>
-                            <constraint firstItem="rRf-dM-QOv" firstAttribute="top" secondItem="YKg-3K-Xhi" secondAttribute="bottom" constant="42" id="co8-eH-yrz"/>
-                            <constraint firstItem="kFi-IK-Lqc" firstAttribute="centerX" secondItem="rRf-dM-QOv" secondAttribute="centerX" id="nNS-sp-PJF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kFi-IK-Lqc" secondAttribute="bottom" constant="56" id="w7S-eU-70Q"/>
+                            <constraint firstItem="YKg-3K-Xhi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ei3-zy-K8B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kFi-IK-Lqc" secondAttribute="bottom" constant="91" id="MzB-Ft-CmE"/>
+                            <constraint firstItem="kFi-IK-Lqc" firstAttribute="trailing" secondItem="rRf-dM-QOv" secondAttribute="trailing" id="PFd-ca-G66"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YKg-3K-Xhi" secondAttribute="trailing" constant="-12" id="PIF-fy-Fef"/>
+                            <constraint firstItem="YKg-3K-Xhi" firstAttribute="centerX" secondItem="rRf-dM-QOv" secondAttribute="centerX" id="Rld-VR-I9j"/>
+                            <constraint firstItem="rRf-dM-QOv" firstAttribute="top" secondItem="YKg-3K-Xhi" secondAttribute="bottom" constant="99" id="ZDV-HC-6kl"/>
+                            <constraint firstItem="kFi-IK-Lqc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZiC-K2-NlT"/>
+                            <constraint firstItem="YKg-3K-Xhi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="v7Q-c3-Wh2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -58,6 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="334"/>
         </scene>
     </scenes>
 </document>

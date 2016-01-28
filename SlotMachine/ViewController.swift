@@ -16,30 +16,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var dataArray2 = [Int]()
     var dataArray3 = [Int]()
     var dataArray4 = [Int]()
-    var dataArray5 = [Int]()
-    var dataArray6 = [Int]()
-    var dataArray7 = [Int]()
-    var dataArray8 = [Int]()
-    var dataArray9 = [Int]()
-    var dataArray10 = [Int]()
-    var dataArray11 = [Int]()
-    var dataArray12 = [Int]()
-    var dataArray13 = [Int]()
-    var dataArray14 = [Int]()
-    var dataArray15 = [Int]()
-    var dataArray16 = [Int]()
-    var dataArray17 = [Int]()
-    var dataArray18 = [Int]()
-    var dataArray19 = [Int]()
-    var dataArray20 = [Int]()
-    var dataArray21 = [Int]()
-    var dataArray22 = [Int]()
-    var dataArray23 = [Int]()
-    var dataArray24 = [Int]()
-    var dataArray25 = [Int]()
-    var dataArray26 = [Int]()
-        
-       
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +28,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             dataArray2.append((Int)(arc4random() % 27))
             dataArray3.append((Int)(arc4random() % 27))
             dataArray4.append((Int)(arc4random() % 27))
-            dataArray5.append((Int)(arc4random() % 27))
-            dataArray6.append((Int)(arc4random() % 27))
-            
-        }
+                    }
         
         resultLabel.text = ""
         
@@ -73,9 +47,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.selectRow(Int(arc4random())%94 + 6, inComponent: 1, animated: true)
         pickerView.selectRow(Int(arc4random())%94 + 6, inComponent: 2, animated: true)
         pickerView.selectRow(Int(arc4random())%94 + 6, inComponent: 3, animated: true)
-        pickerView.selectRow(Int(arc4random())%94 + 6, inComponent: 4, animated: true)
-        pickerView.selectRow(Int(arc4random())%94 + 6, inComponent: 5, animated: true)
-
+       
         
 
         if(dataArray1[pickerView.selectedRowInComponent(0)] == dataArray2[pickerView.selectedRowInComponent(1)] &&
@@ -94,7 +66,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // returns the number of 'columns' to display.
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 6
+        return 4
     }
     
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -111,13 +83,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if component == 0 {
             pickerLabel.text = imageArray[(Int)(dataArray1[row])]
-        } else if component == 1 {
+        }else if component == 1 {
             pickerLabel.text = imageArray[(Int)(dataArray2[row])]
-        } else {
+        }else if component == 2 {
             pickerLabel.text = imageArray[(Int)(dataArray3[row])]
+        }else {
+            pickerLabel.text = imageArray[(Int)(dataArray4[row])]
         }
         
-        pickerLabel.font = UIFont(name: "Arial-BoldMT", size: 40)
+        pickerLabel.font = UIFont(name: "Arial-BoldMT", size: 30)
         pickerLabel.textAlignment = NSTextAlignment.Center
 
         return pickerLabel
